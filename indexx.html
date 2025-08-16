@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Slideshow</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 1s ease-in-out; /* Smooth fade */
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            padding-top: 40px;
+            background-color: rgba(0, 0, 0, 0.4); /* slight background for text */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" autoplay loop>
+  <source src="audio/1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Hidden button (only shows if autoplay fails) -->
+<button id="playBtn" style="display:none;" onclick="playMusic()">Play Music 🎵</button>
+
+<script>
+  const audio = document.getElementById("bgMusic");
+  const playBtn = document.getElementById("playBtn");
+
+  // Try autoplay on page load
+  window.addEventListener("load", () => {
+    audio.play().then(() => {
+      audio.muted = false; // unmute when it starts
+    }).catch(err => {
+      console.log("Autoplay blocked:", err);
+      playBtn.style.display = "inline-block"; // show button if blocked
+    });
+  });
+
+  // Function to play manually if needed
+  function playMusic() {
+    audio.play();
+    audio.muted = false;
+    playBtn.style.display = "none"; // hide button once playing
+  }
+</script>
+
+    <h1>Happy Birthday Ayomide🎉 🎂</h1>
+
+    <script>
+        // List of images for the slideshow
+        const images = [
+            "images/3.JPG",   // Your uploaded image
+            "images/4.JPG",
+            "images/5.JPG",
+            "images/6.JPG",
+            "images/7.JPG",
+            "images/8.JPG", 
+            "images/9.JPG",
+            "images/10.JPG",
+            "images/11.JPG",
+            "images/12.JPG",
+        ];
+
+        let index = 0;
+
+        function changeBackground() {
+            document.body.style.backgroundImage = `url('${images[index]}')`;
+            index = (index + 1) % images.length; // Loop through images
+        }
+
+        // Initial background
+        changeBackground();
+
+        // Change image every 4 seconds
+        setInterval(changeBackground, 4000);
+    </script>
+
+    To the most incredible sister in the world, as we grow older I realize more and more how lucky I am to have a sister like you. I love you more than words can express, I'm honored to be your sibling and to share in the joy and challenges of life with you. May this year bring you new opportunities, new experiences, and more unforgettable moments.
+
+
+<h5>From Momsy; </h5>Happy Birthday to my beautiful daughter &#127881; I'm proud of you, May God fill your heart with joy and happiness today and forever
+
+<h5>From Omolade; </h5>Happy Birthday Omowonuola &#127881; I pray this year brings you peace, joy, and everything you’ve been working for.May your day be as beautiful as your heart and as special as you are
+
+<h5>From The Latest Developer in town;</h5>Happy Birthday Eje mi &#127881; Etin dagba ni yen o, You are one of the biggest blessings in my life, and I thank God for you always. May this year bring you countless reasons to smile, endless opportunities to grow, and more love than you can imagine.
+
+<h5>From Tomisin; </h5>Happy Birthday Sis &#127881; wishing you a wonderful year ahead filled with happiness, good health and all the things you've been hoping for. I pray today brings you smiles, laughter, and special moments you'll remember, enjoy your day to the fullest!
+<h2>From All Of Us<br> WE LOVE YOU!</h2> 
+</body>
+</html>
